@@ -1,1 +1,1 @@
-Initial Public Release - 10/07/2018  DD/MM/YY
+Initial Public Release - 2018-07-10
