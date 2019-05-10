@@ -31,6 +31,7 @@ import os
 filename = sys.argv[1]
 filename_ = filename.split("\\", -1)[-1].split(".")[0]
 errors = 0
+
 try:
     img = Image.open(filename)
 except Exeption:
@@ -49,10 +50,11 @@ for size in icon_sizes:
         size_ = str(size).split(",")[0].replace("[", "").replace("(", "")
         name = "{0}\\{2}-icon-{1}x{1}.ico".format(file_path, size_, filename_)
         img.save(name, sizes=size)
-    except Exeption:
-        print("Unexpected Error:\nCarrying on...")
+    except Exeption as e:
+        print("Unexpected Error:\n{0}\nCarrying on...".format(e))
         errors = errors + 1
         pass
+
 print("\nCompleted with {0} Errors!".format(errors))
 time.sleep(2)
 sys.exit()
